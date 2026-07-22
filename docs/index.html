@@ -7,47 +7,150 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-:root{--bg:#06091a;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.09);--blue:#64b4ff;--green:#22c55e;--text:#dde8ff;--muted:#7aaad4;}
-html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);min-height:100vh;}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;background:rgba(6,9,26,0.93);backdrop-filter:blur(12px);}
+
+:root{
+  --bg:#06091a;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.09);
+  --blue:#64b4ff;--green:#22c55e;--text:#dde8ff;--muted:#7aaad4;
+}
+
+html,body{
+  background:var(--bg);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--text);min-height:100vh;
+}
+
+/* HEADER */
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+  background:rgba(6,9,26,0.93);backdrop-filter:blur(12px);
+}
 .logo-row{display:flex;align-items:center;gap:10px;}
 .logo-row img{width:34px;height:34px;border-radius:8px;}
 .logo-name{font-size:19px;font-weight:900;color:#fff;letter-spacing:-0.02em;}
 .logo-sub{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0.06em;}
-.lang-tabs{display:flex;gap:3px;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:100px;padding:3px;}
-.lang-tab{padding:5px 14px;border-radius:100px;border:none;font-size:12px;font-weight:700;letter-spacing:0.04em;cursor:pointer;background:transparent;color:var(--muted);transition:all 0.18s;}
-.lang-tab.active{background:rgba(100,180,255,0.18);color:var(--blue);border:1px solid rgba(100,180,255,0.35);}
+
+/* LANG TABS */
+.lang-tabs{
+  display:flex;gap:3px;
+  background:rgba(255,255,255,0.06);border:1px solid var(--border);
+  border-radius:100px;padding:3px;
+}
+.lang-tab{
+  padding:5px 14px;border-radius:100px;border:none;
+  font-size:12px;font-weight:700;letter-spacing:0.04em;
+  cursor:pointer;background:transparent;color:var(--muted);transition:all 0.18s;
+}
+.lang-tab.active{
+  background:rgba(100,180,255,0.18);color:var(--blue);
+  border:1px solid rgba(100,180,255,0.35);
+}
+
+/* HERO */
 .hero{text-align:center;padding:48px 24px 36px;}
-.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
-.hero h1{font-size:clamp(34px,8vw,52px);font-weight:900;color:#fff;letter-spacing:-0.03em;line-height:1.06;margin-bottom:14px;}
-.hero-sub{font-size:15px;color:var(--muted);font-weight:500;line-height:1.5;max-width:380px;margin:0 auto 26px;}
-.download-btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#64b4ff 0%,#3d7dd4 100%);color:#fff;font-size:15px;font-weight:800;padding:14px 28px;border-radius:100px;text-decoration:none;box-shadow:0 8px 30px rgba(100,180,255,0.38);transition:transform 0.15s,box-shadow 0.15s;}
+.hero-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:12px;
+}
+.hero h1{
+  font-size:clamp(34px,8vw,52px);font-weight:900;color:#fff;
+  letter-spacing:-0.03em;line-height:1.06;margin-bottom:14px;
+}
+.hero-sub{
+  font-size:15px;color:var(--muted);font-weight:500;line-height:1.5;
+  max-width:380px;margin:0 auto 26px;
+}
+.download-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(135deg,#64b4ff 0%,#3d7dd4 100%);
+  color:#fff;font-size:15px;font-weight:800;
+  padding:14px 28px;border-radius:100px;
+  text-decoration:none;
+  box-shadow:0 8px 30px rgba(100,180,255,0.38);
+  transition:transform 0.15s,box-shadow 0.15s;
+}
 .download-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(100,180,255,0.52);}
 .download-hint{margin-top:10px;font-size:11px;color:#3a618f;font-weight:600;}
 .pill-row{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:22px;}
-.hero-pill{display:inline-flex;align-items:center;gap:5px;border-radius:100px;padding:5px 12px;font-size:11px;font-weight:700;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:5px;border-radius:100px;
+  padding:5px 12px;font-size:11px;font-weight:700;
+}
 .hero-pill.green{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.22);color:var(--green);}
 .hero-pill.blue{background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.22);color:var(--blue);}
-.video-section{display:flex;flex-direction:column;align-items:center;padding:0 0 44px;}
-.video-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#3a5272;margin-bottom:14px;}
-.player-scaler{width:100vw;display:flex;justify-content:center;overflow:hidden;}
-.player-outer{width:390px;height:844px;transform-origin:top center;margin-bottom:calc((844px * (var(--scale,1) - 1)));}
+
+/* VIDEO SECTION — responsive scaling trick */
+.video-section{
+  display:flex;flex-direction:column;align-items:center;
+  padding:0 0 44px;
+}
+.video-label{
+  font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#3a5272;margin-bottom:14px;
+}
+/* The ad player is designed for 390×844px.
+   We scale it down to fit the screen using CSS transform. */
+.player-scaler{
+  width:100vw;
+  display:flex;justify-content:center;
+  overflow:hidden;
+}
+.player-outer{
+  width:390px;
+  height:844px;
+  transform-origin:top center;
+  /* JS will set --scale dynamically */
+  transform:scale(var(--scale,1));
+  margin-bottom:calc((844px * (var(--scale,1) - 1)));
+}
+.player-outer .viewport{
+  width:390px!important;height:844px!important;
+  max-width:none!important;max-height:none!important;
+  box-shadow:0 0 60px rgba(0,0,0,0.8);
+  border-radius:0;
+}
+
+/* FEATURES */
 .features{padding:40px 20px;max-width:480px;margin:0 auto;}
-.section-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#3a5272;margin-bottom:18px;text-align:center;}
-.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:0 16px;margin-bottom:12px;}
-.feat-row{display:flex;align-items:flex-start;gap:13px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.section-label{
+  font-size:10px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:#3a5272;
+  margin-bottom:18px;text-align:center;
+}
+.feature-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:0 16px;margin-bottom:12px;
+}
+.feat-row{
+  display:flex;align-items:flex-start;gap:13px;
+  padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
 .feat-row:last-child{border-bottom:none;}
 .feat-icon{font-size:19px;width:26px;flex-shrink:0;margin-top:1px;}
 .feat-text{font-size:13px;color:#c5d6ee;line-height:1.42;}
 .feat-text strong{color:#fff;font-weight:700;}
 .stats-row{display:flex;gap:10px;margin-top:18px;}
-.stat-card{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:13px 8px;text-align:center;}
+.stat-card{
+  flex:1;background:var(--surface);border:1px solid var(--border);
+  border-radius:13px;padding:13px 8px;text-align:center;
+}
 .stat-num{font-size:27px;font-weight:900;line-height:1;}
 .stat-lbl{font-size:10px;color:#6688aa;margin-top:5px;font-weight:500;line-height:1.3;}
-.site-footer{text-align:center;padding:28px 20px 44px;border-top:1px solid var(--border);color:#3a618f;font-size:12px;font-weight:600;}
+
+/* FOOTER */
+.site-footer{
+  text-align:center;padding:28px 20px 44px;
+  border-top:1px solid var(--border);
+  color:#3a618f;font-size:12px;font-weight:600;
+}
 .site-footer a{color:#4a7aaf;text-decoration:none;}
+
+/* LANG PANELS */
 .lang-panel{display:none;}
 .lang-panel.active{display:block;}
+
+/* AD CSS — stripped of conflicting html/body/.viewport rules */
 
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -268,14 +371,18 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     color:#a8d0ff; font-size:13px; font-weight:700; padding:10px 22px; border-radius:100px; cursor:pointer;
   }
 
-.viewport{position:relative!important;width:390px!important;height:844px!important;max-width:none!important;max-height:none!important;box-shadow:0 0 60px rgba(0,0,0,0.8);border-radius:0;}
+
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="logo-row">
     <img src="data:image/png;base64,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" alt="SPIO">
-    <div><div class="logo-name">SPIO</div><div class="logo-sub">Speech Input Output</div></div>
+    <div>
+      <div class="logo-name">SPIO</div>
+      <div class="logo-sub">Speech Input Output</div>
+    </div>
   </div>
   <div class="lang-tabs">
     <button class="lang-tab active" onclick="switchLang('en')">EN</button>
@@ -283,9 +390,10 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
   </div>
 </header>
 
+<!-- EN PANEL -->
 <div class="lang-panel active" id="panel-en">
   <section class="hero">
-    <div class="hero-eyebrow">Free · Local AI · Android</div>
+    <div class="hero-eyebrow">Free · Open Source · Android</div>
     <h1>Speech for<br>Every App</h1>
     <p class="hero-sub">Dictate and listen in any app — WhatsApp, Telegram, Claude, Gmail, your browser. Completely offline, completely private.</p>
     <a class="download-btn" href="https://github.com/foerster14-bit/SPIO/releases/latest/download/SPIO_App.apk" download>⬇ Download APK</a>
@@ -300,7 +408,8 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
   <section class="video-section">
     <div class="video-label">See it in action</div>
     <div class="player-scaler">
-      <div class="player-outer" id="player-en"><div class="viewport">
+      <div class="player-outer" id="player-en">
+        <div class="viewport">
 
   <!-- ═══ SCENE 1 — HERO ═══ -->
   <div class="scene" id="s1">
@@ -519,52 +628,44 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     </div>
   </div>
 
-  <!-- ═══ SCENE 7 — BUILT-IN TRANSLATION ═══ -->
+<!-- ═══ SCENE — LIVE TRANSLATION (New in 2.0) ═══ -->
   <div class="scene" id="s7">
     <div style="padding:42px 28px 0; display:flex; align-items:center; gap:12px;">
-      <span style="font-size:38px;">🌐</span>
-      <div><div class="eyebrow">Built-in Translation · Whisper AI</div>
-        <h1 style="font-size:26px; margin-top:2px;">Speak Any Language,<br>Type in One</h1></div>
+      <img src="data:image/png;base64,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" style="width:40px;height:40px;border-radius:10px;flex-shrink:0;">
+      <div><div class="eyebrow">New in Release 2.0</div>
+        <h1 style="font-size:28px; margin-top:2px;">Live Translation</h1></div>
     </div>
-    <div style="padding:10px 28px 0;"><div class="lead">Whisper always outputs text in your selected language — no matter which language you speak into the mic.</div></div>
-    <div class="mockup-wrap" style="padding:16px 22px 0; display:flex; justify-content:center;">
+    <div style="padding:8px 28px 0;"><div class="lead">Any chat, any language — understood instantly</div></div>
+    <div class="mockup-wrap" style="padding:20px 22px 0; display:flex; justify-content:center;">
       <div style="width:314px; border-radius:18px; overflow:hidden; box-shadow:0 20px 64px rgba(0,0,0,0.68); background:#0b141a;">
         <div style="height:20px; background:#0a1118;"></div>
         <div class="spio-bar">
           <div class="spio-btn">🎤</div><div class="spio-btn">🔊</div>
-          <div class="spio-btn label">EN</div><div class="spio-btn label">✕</div>
+          <div class="spio-btn">🌐</div><div class="spio-btn label">✕</div>
         </div>
-        <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <span style="font-size:16px;">🗣</span>
-            <div style="font-size:11px; color:#8696a0;">You speak in <strong style="color:#e9edef;">German</strong></div>
+        <div class="chat-area" style="min-height:180px;">
+          <div class="msg them">Vamos à praia à tarde?</div>
+          <div style="align-self:flex-start; display:flex; align-items:center; gap:6px; background:rgba(100,180,255,0.1); border:1px solid rgba(100,180,255,0.25); border-radius:14px; padding:5px 11px; margin:-1px 0 2px 2px;">
+            <span style="font-size:11px;">🌐</span>
+            <span style="font-size:11.5px; color:#a8d0ff; font-style:italic;">"Shall we go to the beach this afternoon?"</span>
           </div>
-          <div style="background:rgba(100,180,255,0.08); border:1px solid rgba(100,180,255,0.2); border-radius:10px; padding:8px 12px; font-size:12px; color:#8696a0; line-height:1.5; font-style:italic;">
-            "Hallo, wie geht es dir heute?"
+          <div class="msg me">Yes, love to!<span class="time">20:15 ✓✓</span></div>
+          <div style="align-self:flex-end; display:flex; align-items:center; gap:6px; background:rgba(100,180,255,0.1); border:1px solid rgba(100,180,255,0.25); border-radius:14px; padding:5px 11px; margin:-1px 2px 2px 0;">
+            <span style="font-size:11px;">🌐</span>
+            <span style="font-size:11.5px; color:#a8d0ff; font-style:italic;">inserted as: "Sim, com prazer!"</span>
           </div>
-          <div style="display:flex; align-items:center; gap:6px; padding:2px 0;">
-            <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
-            <span style="font-size:10px; color:#3a618f; font-weight:700;">WHISPER AI TRANSLATES</span>
-            <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
-          </div>
-          <div style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); border-radius:10px; padding:8px 12px; font-size:12px; color:#e9edef; line-height:1.5;">
-            "Hello, how are you doing today?"
-          </div>
-          <div style="font-size:10px; color:#3a618f; font-weight:600; text-align:center;">✓ Output always in English — 100% on-device</div>
         </div>
       </div>
     </div>
-    <div style="padding:12px 28px 0;">
-      <div class="card" style="padding:10px 14px;">
-        <div class="row" style="gap:10px; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.05);">
-          <span style="font-size:14px;">⭐</span>
-          <div class="rt"><strong>Works best with the Small Q5 model</strong> — best quality for translation</div>
-        </div>
-        <div class="row" style="gap:10px; padding:5px 0;">
-          <span style="font-size:14px;">🔒</span>
-          <div class="rt"><strong>No internet needed</strong> — translation runs entirely on your phone</div>
-        </div>
+    <div style="padding:18px 28px 0;">
+      <div class="card">
+        <div class="row"><div class="ri">🔊</div><div class="rt"><strong>TTS Translation</strong> — hear every message in your language, whatever language the chat is in</div></div>
+        <div class="row"><div class="ri">🎤</div><div class="rt"><strong>STT Translation</strong> — dictate in your language, SPIO inserts it in the chat's language</div></div>
+        <div class="row"><div class="ri">🌐</div><div class="rt"><strong>Tap the globe</strong> — switch Live Translation on or off anytime</div></div>
       </div>
+    </div>
+    <div style="padding:16px 28px 0; text-align:center;">
+      <div class="badge badge-green">🌐 Live Translation · New in 2.0</div>
     </div>
   </div>
 
@@ -609,7 +710,7 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
   <div class="controls">
     <button class="ctrl-btn" id="pauseBtn">⏸</button>
     <button class="ctrl-btn cc" id="ccBtn">CC</button>
-    <span class="scene-counter" id="counter">1 / 8</span>
+    <span class="scene-counter" id="counter">1 / 7</span>
     <button class="ctrl-btn" id="muteBtn">🔊</button>
   </div>
 
@@ -630,7 +731,8 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     <button class="replay-btn" id="replayBtn">↻ Watch Again</button>
   </div>
 
-</div></div>
+</div>
+      </div>
     </div>
   </section>
   <section class="features">
@@ -638,7 +740,7 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     <div class="feature-card">
       <div class="feat-row"><div class="feat-icon">🎤</div><div class="feat-text"><strong>Voice dictation everywhere</strong> — tap the floating mic, speak, text appears in any field</div></div>
       <div class="feat-row"><div class="feat-icon">🔊</div><div class="feat-text"><strong>Read aloud</strong> — reads the last message or selected text. Pause, resume, auto-scroll</div></div>
-      <div class="feat-row"><div class="feat-icon">🌐</div><div class="feat-text"><strong>Built-in translation</strong> — speak any language, Whisper outputs in your selected language</div></div>
+      <div class="feat-row"><div class="feat-icon">🤖</div><div class="feat-text"><strong>Whisper AI on-device</strong> — 4 model sizes, 12 languages, zero internet required</div></div>
       <div class="feat-row"><div class="feat-icon">🔒</div><div class="feat-text"><strong>100% private</strong> — no server, no account, no data leaves your phone</div></div>
     </div>
     <div class="stats-row">
@@ -649,10 +751,11 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
   </section>
 </div>
 
+<!-- PT PANEL -->
 <div class="lang-panel" id="panel-pt">
   <section class="hero">
-    <div class="hero-eyebrow">Gratuito · IA Local · Android</div>
-    <h1>Fala em<br>Qualquer App</h1>
+    <div class="hero-eyebrow">Gratuito · Open Source · Android</div>
+    <h1>Voz em<br>Qualquer App</h1>
     <p class="hero-sub">Dite e ouça em qualquer app — WhatsApp, Telegram, Claude, Gmail, seu navegador. Totalmente offline, totalmente privado.</p>
     <a class="download-btn" href="https://github.com/foerster14-bit/SPIO/releases/latest/download/SPIO_App.apk" download>⬇ Baixar APK</a>
     <div class="download-hint">Android 8+ · arm64 · sempre a versão mais recente</div>
@@ -666,7 +769,8 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
   <section class="video-section">
     <div class="video-label">Veja como funciona</div>
     <div class="player-scaler">
-      <div class="player-outer" id="player-pt"><div class="viewport">
+      <div class="player-outer" id="player-pt">
+        <div class="viewport">
 
   <!-- ═══ SCENE 1 — HERO ═══ -->
   <div class="scene" id="pt_s1">
@@ -888,56 +992,48 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     </div>
   </div>
 
-  <!-- ═══ SCENE 7 — TRADUÇÃO INTEGRADA ═══ -->
+<!-- ═══ SCENE — TRADUÇÃO AO VIVO (Novidade 2.0) ═══ -->
   <div class="scene" id="pt_s7">
     <div style="padding:42px 28px 0; display:flex; align-items:center; gap:12px;">
-      <span style="font-size:38px;">🌐</span>
-      <div><div class="eyebrow">Tradução Integrada · Whisper AI</div>
-        <h1 style="font-size:26px; margin-top:2px;">Fale Qualquer Idioma,<br>Escreva em Um Só</h1></div>
+      <img src="data:image/png;base64,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" style="width:40px;height:40px;border-radius:10px;flex-shrink:0;">
+      <div><div class="eyebrow">Novidade na Versão 2.0</div>
+        <h1 style="font-size:28px; margin-top:2px;">Tradução ao Vivo</h1></div>
     </div>
-    <div style="padding:10px 28px 0;"><div class="lead">O Whisper sempre gera o texto no idioma selecionado — não importa em qual idioma você falar no microfone.</div></div>
-    <div class="mockup-wrap" style="padding:16px 22px 0; display:flex; justify-content:center;">
+    <div style="padding:8px 28px 0;"><div class="lead">Qualquer conversa, qualquer idioma — entendido na hora</div></div>
+    <div class="mockup-wrap" style="padding:20px 22px 0; display:flex; justify-content:center;">
       <div style="width:314px; border-radius:18px; overflow:hidden; box-shadow:0 20px 64px rgba(0,0,0,0.68); background:#0b141a;">
         <div style="height:20px; background:#0a1118;"></div>
         <div class="spio-bar">
           <div class="spio-btn">🎤</div><div class="spio-btn">🔊</div>
-          <div class="spio-btn label">PT</div><div class="spio-btn label">✕</div>
+          <div class="spio-btn">🌐</div><div class="spio-btn label">✕</div>
         </div>
-        <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <span style="font-size:16px;">🗣</span>
-            <div style="font-size:11px; color:#8696a0;">Você fala em <strong style="color:#e9edef;">Inglês</strong></div>
+        <div class="chat-area" style="min-height:180px;">
+          <div class="msg them">Shall we go to the beach this afternoon?</div>
+          <div style="align-self:flex-start; display:flex; align-items:center; gap:6px; background:rgba(100,180,255,0.1); border:1px solid rgba(100,180,255,0.25); border-radius:14px; padding:5px 11px; margin:-1px 0 2px 2px;">
+            <span style="font-size:11px;">🌐</span>
+            <span style="font-size:11.5px; color:#a8d0ff; font-style:italic;">"Vamos à praia à tarde?"</span>
           </div>
-          <div style="background:rgba(100,180,255,0.08); border:1px solid rgba(100,180,255,0.2); border-radius:10px; padding:8px 12px; font-size:12px; color:#8696a0; line-height:1.5; font-style:italic;">
-            "Hello, how are you doing today?"
+          <div class="msg me">Sim, com prazer!<span class="time">20:15 ✓✓</span></div>
+          <div style="align-self:flex-end; display:flex; align-items:center; gap:6px; background:rgba(100,180,255,0.1); border:1px solid rgba(100,180,255,0.25); border-radius:14px; padding:5px 11px; margin:-1px 2px 2px 0;">
+            <span style="font-size:11px;">🌐</span>
+            <span style="font-size:11.5px; color:#a8d0ff; font-style:italic;">inserido como: "Yes, love to!"</span>
           </div>
-          <div style="display:flex; align-items:center; gap:6px; padding:2px 0;">
-            <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
-            <span style="font-size:10px; color:#3a618f; font-weight:700;">WHISPER AI TRADUZ</span>
-            <div style="flex:1; height:1px; background:rgba(255,255,255,0.08);"></div>
-          </div>
-          <div style="background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); border-radius:10px; padding:8px 12px; font-size:12px; color:#e9edef; line-height:1.5;">
-            "Olá, como você está hoje?"
-          </div>
-          <div style="font-size:10px; color:#3a618f; font-weight:600; text-align:center;">✓ Saída sempre em Português — 100% no dispositivo</div>
         </div>
       </div>
     </div>
-    <div style="padding:12px 28px 0;">
-      <div class="card" style="padding:10px 14px;">
-        <div class="row" style="gap:10px; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.05);">
-          <span style="font-size:14px;">⭐</span>
-          <div class="rt"><strong>Funciona melhor com o modelo Small Q5</strong> — melhor qualidade para tradução</div>
-        </div>
-        <div class="row" style="gap:10px; padding:5px 0;">
-          <span style="font-size:14px;">🔒</span>
-          <div class="rt"><strong>Sem internet</strong> — a tradução roda inteiramente no seu celular</div>
-        </div>
+    <div style="padding:18px 28px 0;">
+      <div class="card">
+        <div class="row"><div class="ri">🔊</div><div class="rt"><strong>Tradução em TTS</strong> — ouça cada mensagem no seu idioma, seja qual for o idioma da conversa</div></div>
+        <div class="row"><div class="ri">🎤</div><div class="rt"><strong>Tradução em STT</strong> — dite no seu idioma, o SPIO insere no idioma da conversa</div></div>
+        <div class="row"><div class="ri">🌐</div><div class="rt"><strong>Toque no globo</strong> — ative ou desative a Tradução ao Vivo quando quiser</div></div>
       </div>
+    </div>
+    <div style="padding:16px 28px 0; text-align:center;">
+      <div class="badge badge-green">🌐 Tradução ao Vivo · Novidade na 2.0</div>
     </div>
   </div>
 
-  <!-- ═══ SCENE 8 — QUICK SETUP ═══ -->
+  <!-- ═══ SCENE 8 — CONFIGURAÇÃO RÁPIDA ═══ -->
   <div class="scene" id="pt_s8">
     <div style="padding:44px 28px 0; text-align:center;">
       <img class="app-icon" style="width:64px;height:64px;border-radius:16px;margin:0 auto 16px;" src="data:image/png;base64,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" alt="Ícone SPIO">
@@ -978,7 +1074,7 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
   <div class="controls">
     <button class="ctrl-btn" id="pt_pauseBtn">⏸</button>
     <button class="ctrl-btn cc" id="pt_ccBtn">CC</button>
-    <span class="scene-counter" id="pt_counter">1 / 8</span>
+    <span class="scene-counter" id="pt_counter">1 / 7</span>
     <button class="ctrl-btn" id="pt_muteBtn">🔊</button>
   </div>
 
@@ -999,7 +1095,8 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     <button class="replay-btn" id="pt_replayBtn">↻ Assistir Novamente</button>
   </div>
 
-</div></div>
+</div>
+      </div>
     </div>
   </section>
   <section class="features">
@@ -1007,7 +1104,7 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
     <div class="feature-card">
       <div class="feat-row"><div class="feat-icon">🎤</div><div class="feat-text"><strong>Ditado por voz em todo lugar</strong> — toque no microfone flutuante, fale, texto aparece em qualquer campo</div></div>
       <div class="feat-row"><div class="feat-icon">🔊</div><div class="feat-text"><strong>Leitura em voz alta</strong> — lê a última mensagem ou texto selecionado. Pause, continue, rola automaticamente</div></div>
-      <div class="feat-row"><div class="feat-icon">🌐</div><div class="feat-text"><strong>Tradução integrada</strong> — fale qualquer idioma, o Whisper gera no idioma selecionado</div></div>
+      <div class="feat-row"><div class="feat-icon">🤖</div><div class="feat-text"><strong>Whisper AI no dispositivo</strong> — 4 modelos, 12 idiomas, sem internet</div></div>
       <div class="feat-row"><div class="feat-icon">🔒</div><div class="feat-text"><strong>100% privado</strong> — sem servidor, sem conta, nenhum dado sai do seu telefone</div></div>
     </div>
     <div class="stats-row">
@@ -1020,10 +1117,12 @@ html,body{background:var(--bg);font-family:'Inter',-apple-system,BlinkMacSystemF
 
 <footer class="site-footer">
   <div>github.com/<a href="https://github.com/foerster14-bit/SPIO" target="_blank">foerster14-bit/SPIO</a></div>
-  <div style="margin-top:6px;color:#283850;">No warranty</div>
+  <div style="margin-top:6px;color:#283850;">Open Source · No warranty</div>
 </footer>
 
 <script>
+// ═══ RESPONSIVE SCALING ═══
+// The ad player is fixed 390×844. We scale it to fit the screen width.
 function applyScale() {
   var scale = Math.min(window.innerWidth / 390, 1);
   ['player-en','player-pt'].forEach(function(id) {
@@ -1031,12 +1130,14 @@ function applyScale() {
     if (!el) return;
     el.style.transform = 'scale(' + scale + ')';
     el.style.transformOrigin = 'top center';
+    // Collapse the dead space below the scaled element
     el.style.marginBottom = (844 * (scale - 1)) + 'px';
   });
 }
 applyScale();
 window.addEventListener('resize', applyScale);
 
+// ═══ LANGUAGE SWITCH ═══
 function switchLang(lang) {
   document.querySelectorAll('.lang-panel').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.lang-tab').forEach(function(t){t.classList.remove('active');});
@@ -1047,6 +1148,7 @@ function switchLang(lang) {
   applyScale();
 }
 
+// ═══ EN AD PLAYER (scoped) ═══
 (function() {
 
   const scenes = [
@@ -1056,7 +1158,7 @@ function switchLang(lang) {
     {id:'s4', text:"Let SPIO read your messages out loud if you can't look at the screen. Pause, resume, or jump to any message — all with a tap.", dur:10000},
     {id:'s5', text:"Turn on Auto Mode in one chat, and never miss a message again. SPIO reads every new message the moment it arrives.", dur:8500},
     {id:'s6', text:"Twelve languages. Four AI models to choose from. All running locally — nothing ever leaves your phone.", dur:8000},
-        {id:'s7', text:"Whisper AI has a built-in translation feature. Select English, speak in any language, and SPIO types it in English — automatically, on your device.", dur:11000},
+    {id:'s7', text:"New in Release 2.0: Live Translation. Every message gets read aloud in your language, automatically. And when you dictate, SPIO translates your reply into the chat's language.", dur:10500},
     {id:'s8', text:"Getting started takes less than a minute. No account, no sign-up, no cloud. Just SPIO.", dur:7500},
   ];
 
@@ -1180,6 +1282,7 @@ function switchLang(lang) {
 
 })();
 
+// ═══ PT AD PLAYER (scoped) ═══
 (function() {
 
   const scenes = [
@@ -1189,7 +1292,7 @@ function switchLang(lang) {
     {id:'pt_s4', text:"Deixe o Spió ler suas mensagens em voz alta quando você não puder olhar pra tela. Pause, retome, ou pule para qualquer mensagem — tudo com um toque.", dur:12000},
     {id:'pt_s5', text:"Ative o Modo Automático em uma conversa, e nunca mais perca uma mensagem. O Spió lê cada nova mensagem assim que ela chega.", dur:10500},
     {id:'pt_s6', text:"Doze idiomas. Quatro modelos de IA para escolher. Tudo rodando localmente — nada nunca sai do seu telefone.", dur:10000},
-        {id:'pt_s7', text:"O Whisper tem traducao integrada. Selecione Português, fale em qualquer idioma, e o Spió digita em Português — automaticamente, no seu celular.", dur:11500},
+    {id:'pt_s7', text:"Novidade na versão 2.0: Tradução ao Vivo. Cada mensagem é lida em voz alta no seu idioma, automaticamente. E quando você dita, o Spió traduz sua resposta para o idioma da conversa.", dur:11500},
     {id:'pt_s8', text:"Para começar leva menos de um minuto. Sem conta, sem cadastro, sem nuvem. Só o Spió.", dur:9500},
   ];
 
