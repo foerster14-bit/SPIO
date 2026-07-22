@@ -38,6 +38,8 @@
 
 ## SPIO itself
 
-SPIO is a private project. The APK is provided free of charge for personal use.
-Source code is not publicly available.
+© 2026 foerster14-bit. All rights reserved.
 
+SPIO is proprietary software. The APK is provided free of charge for personal use.
+Source code is not publicly available, and no license is granted beyond use of the
+compiled application as distributed.
